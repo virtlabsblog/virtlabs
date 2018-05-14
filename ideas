@@ -1,3 +1,5 @@
 LUKS
 AIDE
 Desabilitar Consistent Network Device Naming (biosdevname=0 net.ifnames=0)
+Proteger o grub com senha de edição e/ou boot
+Trocar as mensagens nos arquivo /etc/issue, /etc/issue.net e /etc/motd para que não seja mostrada nenhuma informação do sistema
