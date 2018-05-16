@@ -3,3 +3,7 @@ AIDE
 Desabilitar Consistent Network Device Naming (biosdevname=0 net.ifnames=0)
 Proteger o grub com senha de edição e/ou boot
 Trocar as mensagens nos arquivo /etc/issue, /etc/issue.net e /etc/motd para que não seja mostrada nenhuma informação do sistema
+Deixar os logs do journald persistentes
+Configurar syslog para envio de logs para servidor remoto
+Configurar audit para envio de logs para servidor remoto
+Habilitar o módulo pam_tty_audir.so nos arquivo sshd e login para o usuário root
