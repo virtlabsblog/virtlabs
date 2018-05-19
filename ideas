@@ -6,4 +6,4 @@ Trocar as mensagens nos arquivo /etc/issue, /etc/issue.net e /etc/motd para que 
 Deixar os logs do journald persistentes
 Configurar syslog para envio de logs para servidor remoto
 Configurar audit para envio de logs para servidor remoto
-Habilitar o módulo pam_tty_audir.so nos arquivo sshd e login para o usuário root
+Habilitar o módulo pam_tty_audit.so nos arquivo sshd e login para o usuário root
