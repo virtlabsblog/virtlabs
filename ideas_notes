@@ -13,3 +13,9 @@
 [SELinux]
   Usar permissive ou enforcing, mas nunca desabilitar
   Contextos: user, role, type
+  Sources: processos e usuários
+  Targets: arquivos e portas
+  Booleans
+  Escrever as manpages se necessário (sepolicy manpage -a)
+  Para validar o que o SELinux está bloqueando, procure por AVC no arquivo /var/log/audit/audit.log, sealert no arquivo /var/log/messages, usar o comando aureport
+  
