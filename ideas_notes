@@ -9,6 +9,7 @@
   Configurar syslog para envio de logs para servidor remoto (SSL/TLS)
   Configurar audit para envio de logs para servidor remoto
   Habilitar o módulo pam_tty_audit.so para o usuário root
+  Utilizar randomização de área de memória de processos
 
 [SELinux]
   Usar permissive ou enforcing, mas nunca desabilitar
@@ -18,4 +19,19 @@
   Booleans
   Escrever as manpages se necessário (sepolicy manpage -a)
   Para validar o que o SELinux está bloqueando, procure por AVC no arquivo /var/log/audit/audit.log, sealert no arquivo /var/log/messages, usar o comando aureport
+  
+[BIND]
+  Permitir pesquisas apenas de redes confiáveis
+  Desabilitar recursão se não for necessário
+  Permitir transferência de zonas apenas dos servidores secundários e utilizar TSIG
+  chroot
+  DNSSEC
+
+[APACHE]
+  Usar ssl em tudo
+  Utilizar o parametro order
+  
+[CGROUPS]
+  
+[CONTAINERS]
   
