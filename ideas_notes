@@ -9,3 +9,7 @@
   Configurar syslog para envio de logs para servidor remoto (SSL/TLS)
   Configurar audit para envio de logs para servidor remoto
   Habilitar o módulo pam_tty_audit.so para o usuário root
+
+[SELinux]
+  Usar permissive ou enforcing, mas nunca desabilitar
+  Contextos: user, role, type
