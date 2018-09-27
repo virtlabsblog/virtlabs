@@ -17,7 +17,7 @@ LDAP_BINDDN_PASSWORD_FILE="/opt/syncldap2ad/conf/ldap_binddn_password"
 # Conexão Active Directory através do SAMBA4 local
 AD_ADDRESS=""
 AD_URI="ldap://${AD_ADDRESS}:389/"
-AD_BASE="DC=ITAIPU,DC=LAB"
+AD_BASE="DC=EXAMPLE,DC=COM"
 AD_USERS_OU="OU=Users LDAP"
 AD_GROUPS_OU="OU=Groups LDAP"
 AD_BINDDN="CN=ldap sync,OU=Domain Admins,${AD_BASE}"
