@@ -1,0 +1,55 @@
+# Diretórios
+BASE_DIR=""
+TEMP_DIR="${BASE_DIR}/syncldap2ad/tmp"
+CONF_DIR="${BASE_DIR}/syncldap2ad/conf"
+VAR_DIR="${BASE_DIR}/syncldap2ad/var"
+LIB_DIR="${BASE_DIR}/syncldap2ad/tmp"
+
+# Conexão LDAP
+LDAP_ADDRESS=""
+LDAP_URI="ldap://${LDAP_ADDRESS}:389/"
+LDAP_BASE="DC=EXAMPLE,DC=COM"
+LDAP_USERS_OU="OU=Users"
+LDAP_GROUPS_OU="OU=Groups"
+LDAP_BINDDN="CN=Manager,${LDAP_BASE}"
+LDAP_BINDDN_PASSWORD_FILE="/opt/syncldap2ad/conf/ldap_binddn_password"
+
+# Conexão Active Directory através do SAMBA4 local
+AD_ADDRESS=""
+AD_URI="ldap://${AD_ADDRESS}:389/"
+AD_BASE="DC=ITAIPU,DC=LAB"
+AD_USERS_OU="OU=Users LDAP"
+AD_GROUPS_OU="OU=Groups LDAP"
+AD_BINDDN="CN=ldap sync,OU=Domain Admins,${AD_BASE}"
+AD_BINDDN_PASSWORD_FILE="/opt/syncldap2ad/conf/ad_binddn_password"
+
+# Arquivos
+ATTR_FILE="${CONF_DIR}/attributes"
+ATTR_DN_FILE="${CONF_DIR}/attributes_dn"
+LDAP_USERS_FILE="${TEMP_DIR}/ldap_users"
+LDAP_GROUPS_FILE="${TEMP_DIR}/ldap_groups"
+LDAP_NEW_USERS_FILE="${TEMP_DIR}/ldap_new_users"
+LDAP_NEW_GROUPS_FILE="${TEMP_DIR}/ldap_new_groups"
+LDAP_LAST_MODIFIED_USERS_FILE="${TEMP_DIR}/ldap_last_modified_users"
+LDAP_LAST_MODIFIED_GROUPS_FILE="${TEMP_DIR}/ldap_last_modified_groups"
+AD_USERS_FILE="${TEMP_DIR}/ad_users"
+AD_GROUPS_FILE="${TEMP_DIR}/ad_groups"
+AD_NEW_USERS_FILE="${TEMP_DIR}/ad_new_users"
+AD_NEW_GROUPS_FILE="${TEMP_DIR}/ad_new_groups"
+AD_LAST_MODIFIED_USERS_FILE="${TEMP_DIR}/ad_last_modified_users"
+AD_LAST_MODIFIED_GROUPS_FILE="${TEMP_DIR}/ad_last_modified_groups"
+
+# Comandos
+LDAPSEARCH="/usr/bin/ldapsearch"
+LDAPMODIFY="/usr/bin/ldapmodify"
+
+# Atributos
+ATTRIBUTES=$(sort "${ATTR_FILE}" | awk 'BEGIN {RS=""}{gsub(/\n/," ",$0); print $0}')
+ATTRIBUTES_DN=$(sort "${ATTR_DN_FILE}" | awk 'BEGIN {RS=""}{gsub(/\n/," ",$0); print $0}')
+
+# OUTROS
+TIMESTAMP_LAST_USERS_CREATE="$(cat ${VAR_DIR}/timestamp_last_users_create)"
+TIMESTAMP_LAST_USERS_SYNC="$(cat ${VAR_DIR}/timestamp_last_users_sync)"
+TIMESTAMP_LAST_GROUPS_CREATE="$(cat ${VAR_DIR}/timestamp_last_groups_create)"
+TIMESTAMP_LAST_GROUPS_SYNC_FILE="${VAR_DIR}/timestamp_last_groups_sync"
+TIMESTAMP_LAST_GROUPS_SYNC="$(cat ${TIMESTAMP_LAST_GROUPS_SYNC_FILE})"
